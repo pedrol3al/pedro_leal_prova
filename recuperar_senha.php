@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //VERIFICA SE O EMAIL EXISTE NO BANCO DE DADOS
     $sql = "SELECT * FROM usuario WHERE email = :email";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam("email", $email);
+    $stmt->bindParam(":email", $email);
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':senha', $senha_hash);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-
+ 
         //SIMULA O ENVIO DO EMAIL (GRAVA TXT)
         simularEnvioEmail($email, $senha_temporaria);
         echo "<script>alert('Uma senha temporaria foi gerada e enviada (Simulação). Verifique o arquivo email_simulados.txt');window.location.href='login.php';</script>";
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <h2>Recuperar Senha</h2>
-    <form action="recuperar_senha.php" method="PALTOST">
+    <form action="recuperar_senha.php" method="POST">
         <label for="email">Digite o seu e-mail cadastrado:</label>
         <input type="email" name="email" id="email" required>
 
