@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
+    scrollbar-width: none;
 }
 
 .login-container {
@@ -25,6 +26,7 @@ header {
     padding: 15px;
     background-color: #f4f4f4;
     border-bottom: 2px solid #ccc;
+    scrollbar-width: none;
 }
 
 .saudacao {
@@ -168,3 +170,4 @@ button {
 button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
+

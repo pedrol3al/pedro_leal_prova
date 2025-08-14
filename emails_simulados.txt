@@ -18,3 +18,7 @@ Para: pedro@gmail.com
 Olá! Sua nova senha temporária é: s6jOGEWP
 
 ----------------------
+Para: admin@admin
+Olá! Sua nova senha temporária é: solNR3ap
+
+----------------------
