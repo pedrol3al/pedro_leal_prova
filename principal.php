@@ -20,6 +20,7 @@ $nome_perfil = $perfil['nome_perfil'];
 //DEFINIÇÃO DAS PERMISSÕES POR PERFIL
 
 $permissoes = [
+    //adm
     1 => [
         "Cadastrar" => [
             "cadastro_usuario.php",
@@ -54,20 +55,21 @@ $permissoes = [
             "excluir_funcionario.php"
         ]
     ],
+    //secretaria
     2 => [
         "Cadastrar" => ["cadastro_cliente.php"],
-        "Buscar" => ["buscar_cliente.php", "buscar_fornecedor.php", "buscar_produto.php"],
+        "Buscar" => ["buscar_cliente.php", "buscar_fornecedor.php", "buscar_produto.php","buscar_usuario.php"],
         "Alterar" => ["alterar_fornecedor.php", "alterar_produto.php"],
         "Excluir" => ["excluir_produto.php"]
     ],
-
+    //almoxarife
     3 => [
         "Cadastrar" => ["cadastro_fornecedor.php", "cadastro_produto.php"],
         "Buscar" => ["buscar_cliente.php", "buscar_fornecedor.php", "buscar_produto.php"],
         "Alterar" => ["alterar_fornecedor.php", "alterar_produto.php"],
         "Excluir" => ["excluir_produto.php",]
     ],
-
+    //cliente
     4 => [
         "Cadastrar" => ["cadastro_cliente.php"],
         "Buscar" => ["buscar_produto.php"],
@@ -121,6 +123,9 @@ $opcoes_menu = $permissoes[$id_perfil];
             <?php endforeach; ?>
         </ul>
     </nav>
+
+
+    <address>Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
 
 </body>
 
