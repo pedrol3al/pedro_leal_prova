@@ -86,5 +86,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="text-center"> 
         <a href="principal.php" > Voltar </a>
         </div>
+
+        <address class="text-center">Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
+
 </body>
 </html>
