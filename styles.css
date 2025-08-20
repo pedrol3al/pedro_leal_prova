@@ -56,7 +56,7 @@ header {
     padding: 0;
     margin: 0;
     display: flex;
-    background-color: #333;
+    background-color: #be0f0f;
 }
 
 .menu li {
@@ -68,11 +68,11 @@ header {
     padding: 15px;
     color: white;
     text-decoration: none;
-    background-color: #333;
+    background-color: #b90e0e;
 }
 
 .menu li:hover > a {
-    background-color: #555;
+    background-color: #a10d0d;
 }
 
 .dropdown-menu {
