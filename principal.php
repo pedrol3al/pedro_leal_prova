@@ -58,7 +58,7 @@ $permissoes = [
     //secretaria
     2 => [
         "Cadastrar" => ["cadastro_cliente.php"],
-        "Buscar" => ["buscar_cliente.php", "buscar_fornecedor.php", "buscar_produto.php","buscar_usuario.php"],
+        "Buscar" => ["buscar_cliente.php", "buscar_fornecedor.php", "buscar_produto.php", "buscar_usuario.php"],
         "Alterar" => ["alterar_fornecedor.php", "alterar_produto.php"],
         "Excluir" => ["excluir_produto.php"]
     ],
@@ -94,18 +94,7 @@ $opcoes_menu = $permissoes[$id_perfil];
 </head>
 
 <body>
-    <header>
-        <div>
-            <h2>Bem vindo, <?php echo $_SESSION["usuario"]; ?>! Perfil: <?php
-              echo $nome_perfil; ?> </h2>
-        </div>
 
-        <div class="logout">
-            <form action="logout.php" method="POST">
-                <button type="submit">Logout</button>
-            </form>
-        </div>
-    </header>
 
     <nav>
         <ul class="menu">
@@ -123,6 +112,19 @@ $opcoes_menu = $permissoes[$id_perfil];
             <?php endforeach; ?>
         </ul>
     </nav>
+    <div>
+        <h2>Bem vindo, <?php echo $_SESSION["usuario"]; ?>!<br>Perfil: <?php
+           echo $nome_perfil; ?> </h2>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="logout">
+        <form action="logout.php" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
 
 
     <address>Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
