@@ -2,13 +2,10 @@
 session_start();
 require_once("conexao.php");
 
-if ($_SESSION['perfil'] != 1 || $_SESSION['perfil'] != 3) {
-
-} else {
-    echo "Acesso negado!";
+if ($_SESSION['perfil'] != 1 && ($_SESSION['perfil'] != 3)) {
+    echo "<script>alert('Acesso negado!');window.location.href='principal.php'</script>";
     exit();
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome_prod = $_POST["nome_prod"];
     $descricao = $_POST["descricao"];
@@ -29,6 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+<?php include('menu.php') ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -36,10 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Produto</title>
-    <link rel="stylesheet" href="style_prod.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <script scr="validacoes_prod.js"></script>
+       <!-- Link das máscaras dos campos -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
+    <script src="validacoes_prod.js"></script>
+
+   
 </head>
 
 <body>
@@ -56,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="number" name="qtde" id="qtde" class="form-control" required>
 
         <label for="valor_unit">Valor unidade:</label>
-        <input type="number" name="valor_unit" id="valor_unit" class="form-control" required>
+        <input type="text" name="valor_unit" id="valor_unit" class="form-control" required>
         <br>
 
         <button type="submit"> Salvar </button>
