@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require_once('conexao.php');
@@ -43,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <br>
     <h2>Login</h2>
     <form action="index.php" method="POST">
         <label for="email">E-mail</label>
@@ -54,9 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Entrar</button>
     </form>
 
-    <p><a href="recuperar_senha.php" class = "text-center">Esqueci a minha senha</a></p>
+        <div class="text-center">
+        <a href="recuperar_senha.php" class="btn-recupera">
+            <button type="button">
+                Esqueci minha senha
+            </button>
+        </a>
+    </div>
     
-
+    <br><br>
     <address>Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
 
 </body>
