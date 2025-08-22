@@ -33,6 +33,10 @@ if (isset($_GET['id']) && is_numeric(trim($_GET['id']))) {
 }
 
 ?>
+
+<?php include("menu.php"); ?> 
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
