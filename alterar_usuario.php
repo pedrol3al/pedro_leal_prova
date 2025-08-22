@@ -37,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<?php include("menu.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -68,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="processa_alteracao_usuario.php" method="POST">
             <input type="hidden" name="id_usuario" value="<?= htmlspecialchars($usuario['id_usuario']) ?>">
 
-            <label for="nome">Nome:</label>
+            <label for="nome">Nome:</label> 
             <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($usuario['nome']) ?>" required>
 
             <label for="email">Email:</label>
@@ -93,7 +95,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     <?php endif; ?>
 
-    <a href="principal.php">Voltar</a>
+    <div class="text-center">
+        <a href="principal.php" class="btn-voltar">
+            <button type="button">
+                Voltar
+            </button>
+        </a>
+    </div>
+    
     <address class="text-center">Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
 
 </body>
