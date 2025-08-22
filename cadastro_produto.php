@@ -38,11 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Cadastrar Produto</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-       <!-- Link das máscaras dos campos -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
-    <script src="validacoes_prod.js"></script>
+  
 
    
 </head>
