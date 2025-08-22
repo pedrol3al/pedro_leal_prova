@@ -1,8 +1,22 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
     scrollbar-width: none;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* joga o <ul> para o centro */
+    background-color: #196183;
 }
 
 .login-container {
@@ -35,7 +49,11 @@ header {
 }
 
 .logout {
-    text-align: right;
+       position: fixed;      /* fixa na tela */
+    bottom: 20px;         /* distância do rodapé */
+    left: 50%;            /* posiciona o centro do botão na metade da tela */
+    transform: translateX(-50%); /* centraliza exatamente */
+    text-align: center;   /* garante centralização do conteúdo interno */
 }
 
 .logout button {
@@ -46,6 +64,8 @@ header {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 .logout button:hover {
@@ -57,8 +77,9 @@ header {
     padding: 0;
     margin: 0;
     display: flex;
-    background-color: #be0f0f;
+    background-color: #1fb7dd;
 }
+
 
 .menu li {
     position: relative;
@@ -69,11 +90,11 @@ header {
     padding: 15px;
     color: white;
     text-decoration: none;
-    background-color: #b90e0e;
+    background-color: #196183;
 }
 
 .menu li:hover > a {
-    background-color: #a10d0d;
+    background-color: #0c4c77;
 }
 
 .dropdown-menu {
@@ -147,6 +168,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
 select {
     width: 80%; /* Ocupa toda a largura do formulário */
     padding: 8px;
@@ -168,10 +190,131 @@ button {
     transition: 0.3s;
 }
 
-button[type = "submit"]{
-    background-color: green;
+
+
+/* Ajusta os botões */
+button {
+    width: 15%;
+    padding: 10px;
+    background-color: #007bff; /* Azul bonito */
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 16px;
+    
 }
 
-button[type = "reset"]{
-    background-color: rgb(128, 15, 0);
+button:hover{
+    background-color: #0b4e8d;
+}
+
+/* Ajusta os botões */
+.btn-recupera {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff; /* Azul bonito */
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 16px;
+    
+}
+
+.btn-recupera:hover{
+    background-color: #0b4e8d;
+}
+
+button[type = "submit"] {
+    width: 80%;
+    padding: 10px;
+    background-color: #077003; /* Azul bonito */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 16px;
+}
+
+button[type = "reset"] {
+    width: 80%;
+    padding: 10px;
+    background-color: #941212; /* Azul bonito */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 16px !important;
+}
+
+button[type = "submit"]:hover{
+    background-color: #08b633;
+}
+
+button[type = "reset"]:hover{
+    background-color: #b81010;
+}
+
+/* Estilo da tabela */
+.custom-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.custom-table thead {
+    background: #196183; /* azul escuro */
+    color: #fff;
+}
+
+.custom-table th {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Linhas */
+.custom-table td {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Linhas alternadas */
+.custom-table tbody tr:nth-child(even) {
+    background: #f2f9fc; /* azul clarinho */
+}
+
+/* Efeito hover */
+.custom-table tbody tr:hover {
+    background: #d8ecf7;
+    transition: 0.3s;
+}
+/* Mensagem de nenhum produto */
+.sem-resultado {
+    text-align: center;
+    margin: 30px auto;
+    padding: 15px 20px;
+    width: 60%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #196183;         /* azul escuro */
+    background: #e6f4fa;    /* azul claro */
+    border: 1px solid #b5dcea;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
