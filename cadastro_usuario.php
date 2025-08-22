@@ -29,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+<?php include("menu.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -59,13 +62,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="3">Almoxarife</option>
             <option value="4">Cliente</option>
         </select>
-
+ 
             <button type="submit"> Salvar </button>
             <button type="reset"> Cancelar </button>
     </form>
 
-    <a href="principal.php">Voltar</a>
+    <div class="text-center">
+        <a href="principal.php" class="btn-voltar">
+            <button type="button">
+                Voltar
+            </button>
+        </a>
+    </div>
 
+<br>
     <address>Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
 </body>
 
