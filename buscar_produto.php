@@ -3,7 +3,7 @@ session_start();
 require_once("conexao.php");
 
 //VERIFICA SE O USUARIO TEM PERMISSAO DE adm OU secretaria]
-if ($_SESSION['perfil'] != 1 && $_SESSION['perfil'] != 3) {
+if ($_SESSION['perfil'] != 1 && $_SESSION['perfil'] != 2 && $_SESSION['perfil'] != 3 && $_SESSION['perfil'] != 4) {
     echo "<script>alert('Acesso negado!');window.location.href='principal.php'</script>";
     exit();
 }
