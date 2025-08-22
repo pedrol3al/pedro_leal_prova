@@ -3,7 +3,7 @@ session_start();
 require_once("conexao.php");
 
 //VERIFICA SE O USUARIO TEM PERMISSAO DE adm OU secretaria]
-if ($_SESSION['perfil'] != 1 && $_SESSION['perfil'] != 2 && $_SESSION['perfil'] != 3 && $_SESSION['perfil'] != 4) {
+if ($_SESSION['perfil'] != 1 && $_SESSION['perfil'] != 3) {
     echo "<script>alert('Acesso negado!');window.location.href='principal.php'</script>";
     exit();
 }
@@ -29,10 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['busca'])) {
     $sql = "SELECT * FROM produto ORDER BY nome_prod ASC";
     $stmt = $pdo->prepare($sql);
 }
-$stmt->execute();
+$stmt->execute(); 
 $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+
+  <?php include("menu.php"); ?> 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -40,15 +42,15 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca de funcionarios</title>
-    <link rel="stylesheet" href="style_prod.css">
+    <title>Busca de produtos</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <h2 class="text-center">Lista de Usuários</h2>
+    <h2 class="text-center">Lista de Produtos</h2>
 
     <form action="buscar_produto.php" method="POST" >
         <label for="busca">Digite o ID ou NOME(opcional): </label>
@@ -58,7 +60,7 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php if (!empty($produtos)): ?>
 
-        <table class="table">
+        <table class="custom-table">
             <tr>
                 <th>ID</th>
                 <th>Nome Produto</th>
@@ -70,6 +72,7 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($produtos as $produto): ?>
 
                 <tr>
+                    <td><?= htmlspecialchars($produto['id_produto']) ?> </td>
                     <td><?= htmlspecialchars($produto['nome_prod']) ?> </td>
                     <td><?= htmlspecialchars($produto['descricao']) ?> </td>
                     <td><?= htmlspecialchars($produto['qtde']) ?> </td>
@@ -83,7 +86,7 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </table>
     <?php else: ?>
-        <p>Nenhum produto encontrado.</p>
+        <p class="sem-resultado">Nenhum produto encontrado.</p>
     <?php endif; ?>
     <div class="text-center">
         <a href="principal.php" class="btn-voltar">
