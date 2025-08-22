@@ -32,7 +32,11 @@ if (isset($_GET['id']) && is_numeric(trim($_GET['id']))) {
     }
 }
 
+
 ?>
+
+<?php include("menu.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -77,7 +81,11 @@ if (isset($_GET['id']) && is_numeric(trim($_GET['id']))) {
     <?php endif; ?>
 
     <div class="text-center">
-        <a href="principal.php">Retornar</a>
+        <a href="principal.php" class="btn-voltar">
+            <button type="button">
+                Voltar
+            </button> 
+        </a>
     </div>
 
     <address class="text-center">Trabalho desenvolvido pelo aluno Pedro Gabriel | Técnico Dev Sistemas</address>
