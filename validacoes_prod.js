@@ -1,9 +1,11 @@
-const campo = document.getElementById('nome_prod');
-
-campo.addEventListener('keypress', function(e) {
-    // e.key é a tecla que o usuário digitou
-    if (/\d/.test(e.key)) { // verifica se é número
-        e.preventDefault(); // impede que o número seja digitado
-        alert('Não é permitido números!');
-    }
+$(document).ready(function(){
+    $('#valor_unit').mask('000.000.000.000.000,00', {reverse: true});
+    
+    $('#valor_unit').on('blur', function(){
+        if($(this).val() !== ""){
+            $(this).val('R$ ' + $(this).val());
+        }
+    });
 });
+
+
